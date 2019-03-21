@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortcutManager", "Shortcut
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortcutManager.Tests", "ShortcutManager.Tests\ShortcutManager.Tests.csproj", "{B7D34E95-ADD8-4C5C-91D9-770774F2FD81}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortcutManager.Wpf", "ShortcutManager.Wpf\ShortcutManager.Wpf.csproj", "{100B226E-D93F-4C02-9654-2A6442A85D2C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B7D34E95-ADD8-4C5C-91D9-770774F2FD81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7D34E95-ADD8-4C5C-91D9-770774F2FD81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7D34E95-ADD8-4C5C-91D9-770774F2FD81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{100B226E-D93F-4C02-9654-2A6442A85D2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{100B226E-D93F-4C02-9654-2A6442A85D2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{100B226E-D93F-4C02-9654-2A6442A85D2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{100B226E-D93F-4C02-9654-2A6442A85D2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
