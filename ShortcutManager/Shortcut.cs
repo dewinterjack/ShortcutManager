@@ -1,6 +1,6 @@
 ﻿namespace ShortcutManager
 {
-    internal class Shortcut
+    public class Shortcut
     {
         public string Name { get; }
         public string Link { get; }

@@ -10,6 +10,8 @@ namespace ShortcutManager.Wpf
     {
         public MainWindow()
         {
+            var workspaceHome = new WorkspaceHomeViewModel();
+            DataContext = workspaceHome;
             InitializeComponent();
         }
     }

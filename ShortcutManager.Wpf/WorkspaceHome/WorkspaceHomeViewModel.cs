@@ -1,4 +1,6 @@
-﻿using System.Windows.Input;
+﻿using System.Collections.Generic;
+using System.Windows.Documents;
+using System.Windows.Input;
 using ShortcutManager.Wpf.Utils;
 
 namespace ShortcutManager.Wpf.WorkspaceHome
