@@ -2,8 +2,8 @@
 
 namespace ShortcutManager
 {
-    internal class Workspace
+    public class Workspace
     {
-        internal static readonly List<Shortcut> Default = new List<Shortcut>();
+        public static readonly List<Shortcut> Default = new List<Shortcut>();
     }
 }

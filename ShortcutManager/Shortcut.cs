@@ -1,4 +1,7 @@
-﻿namespace ShortcutManager
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
+namespace ShortcutManager
 {
     public class Shortcut
     {

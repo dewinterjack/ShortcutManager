@@ -17,18 +17,21 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="20"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="20"></RowDefinition>
         </Grid.RowDefinitions>
 
         <TextBlock Text="Default Workspace"
                    Grid.Column="1"
-                   Grid.Row="1"/>
-        <ListView Items=""></ListView>
+                   Grid.Row="1" />
+        <ListView Grid.Column="1"
+                  Grid.Row="2" ItemsSource="{Binding Path=DefaultWorkspaceNames}" />
         <Button Content="Add Shortcut"
-                Grid.Column="2"
-                Grid.Row="2"
-                Command="{Binding Path=CreateShortcut}"/>
+                Grid.Column="3"
+                Grid.Row="3"
+                Width="100"
+                Height="30"
+                Command="{Binding Path=CreateShortcut}" />
     </Grid>
 </Window>
