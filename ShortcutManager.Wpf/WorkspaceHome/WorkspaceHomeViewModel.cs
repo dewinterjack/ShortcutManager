@@ -22,6 +22,12 @@ namespace ShortcutManager.Wpf.WorkspaceHome
             DefaultWorkspaceNames = new ObservableCollection<string>();
         }
 
+        public void LaunchShortcut(Shortcut shortcut)
+        {
+            var processLauncher = new ProcessLauncher();
+            processLauncher.Open(shortcut.Link);
+        }
+
         private void AddShortcut()
         {
             _shortcutService.AddShortcut("Hello", "world");
