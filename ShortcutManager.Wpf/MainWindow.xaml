@@ -17,7 +17,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="20"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="120"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="20"></RowDefinition>
         </Grid.RowDefinitions>
@@ -27,11 +27,18 @@
                    Grid.Row="1" />
         <ListView Grid.Column="1"
                   Grid.Row="2" ItemsSource="{Binding Path=DefaultWorkspaceNames}" />
-        <Button Content="Add Shortcut"
-                Grid.Column="3"
-                Grid.Row="3"
-                Width="100"
-                Height="30"
-                Command="{Binding Path=CreateShortcut}" />
+        <StackPanel Orientation="Vertical"
+                    Grid.Column="3"
+                    Grid.Row="2">
+            <TextBlock Text="Title" Width="100"/>
+            <TextBox Name="ShortcutTitle"  Width="100" Margin="10"></TextBox>
+            <TextBlock Text="Link/URL" Width="100"/>
+            <TextBox ToolTip="Link/Path" Width="100" Margin="10"></TextBox>
+            <Button Content="Add Shortcut"
+                    Width="100"
+                    Height="30"
+                    Command="{Binding Path=CreateShortcut}" />
+        </StackPanel>
+
     </Grid>
 </Window>
