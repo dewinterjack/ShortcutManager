@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
-using System.Windows.Documents;
 using System.Windows.Input;
 using ShortcutManager.Wpf.Utils;
 
@@ -20,12 +18,6 @@ namespace ShortcutManager.Wpf.WorkspaceHome
         {
             _shortcutService = new ShortcutService();
             DefaultWorkspaceNames = new ObservableCollection<string>();
-        }
-
-        public void LaunchShortcut(Shortcut shortcut)
-        {
-            var processLauncher = new ProcessLauncher();
-            processLauncher.Open(shortcut.Link);
         }
 
         private void AddShortcut()
