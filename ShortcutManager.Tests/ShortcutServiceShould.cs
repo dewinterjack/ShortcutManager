@@ -9,12 +9,12 @@ namespace ShortcutManager.Tests
         [Test]
         public void AddShortcutToDefaultWorkspace()
         {
-            var shortcutService = new ShortcutService();
+            var workspaceService = new WorkspaceService();
             Workspace.Default.ShouldBeEmpty();
 
             var shortcutName = "Github Profile";
             var shortcutLink = "https://github.com/dewinterjack";
-            shortcutService.AddShortcut(shortcutName, shortcutLink);
+            workspaceService.AddShortcut(shortcutName, shortcutLink);
 
             Workspace.Default.Count.ShouldBe(1);
             Workspace.Default.First().Name.ShouldBe(shortcutName);
