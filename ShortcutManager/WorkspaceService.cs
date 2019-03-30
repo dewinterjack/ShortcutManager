@@ -1,6 +1,6 @@
 ﻿namespace ShortcutManager
 {
-    public class ShortcutService : IShortcutService
+    public class WorkspaceService : IWorkspaceService
     {
         public void AddShortcut(string name, string link)
         {

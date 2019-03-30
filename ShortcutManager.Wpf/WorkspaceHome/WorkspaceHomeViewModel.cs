@@ -7,7 +7,7 @@ namespace ShortcutManager.Wpf.WorkspaceHome
 {
     public class WorkspaceHomeViewModel
     {
-        private readonly IShortcutService _shortcutService;
+        private readonly IWorkspaceService _workspaceService;
 
         public ICommand CreateShortcut =>
             new RelayCommand( _ => AddShortcut(), _ => true);
@@ -16,13 +16,13 @@ namespace ShortcutManager.Wpf.WorkspaceHome
 
         public WorkspaceHomeViewModel()
         {
-            _shortcutService = new ShortcutService();
+            _workspaceService = new WorkspaceService();
             DefaultWorkspaceNames = new ObservableCollection<string>();
         }
 
         private void AddShortcut()
         {
-            _shortcutService.AddShortcut("Hello", "world");
+            _workspaceService.AddShortcut("Hello", "world");
             var shortcutName = Workspace.Default.Last().Name;
             DefaultWorkspaceNames.Add(shortcutName);
         }
