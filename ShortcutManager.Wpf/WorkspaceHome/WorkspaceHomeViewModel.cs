@@ -23,7 +23,7 @@ namespace ShortcutManager.Wpf.WorkspaceHome
         private void AddShortcut()
         {
             _workspaceService.AddShortcut("Hello", "world");
-            var shortcutName = Workspace.Default.Last().Name;
+            var shortcutName = Workspace.Default.Shortcuts.Last().Name;
             DefaultWorkspaceNames.Add(shortcutName);
         }
 
