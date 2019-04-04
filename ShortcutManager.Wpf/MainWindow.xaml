@@ -27,8 +27,14 @@
                    Grid.Row="1" />
         <ListView Grid.Column="1"
                   Grid.Row="2"
-                  ItemsSource="{Binding Path=DefaultWorkspaceNames}"
-                  Height="300"/>
+                  ItemsSource="{Binding Path=DefaultWorkspace}"
+                  Height="300">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"></TextBlock>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         <StackPanel Orientation="Vertical"
                     Grid.Column="3"
                     Grid.Row="2">

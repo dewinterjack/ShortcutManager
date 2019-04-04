@@ -12,19 +12,19 @@ namespace ShortcutManager.Wpf.WorkspaceHome
         public ICommand CreateShortcut =>
             new RelayCommand( _ => AddShortcut(), _ => true);
 
-        public ObservableCollection<string> DefaultWorkspaceNames { get; }
+        public ObservableCollection<Shortcut> DefaultWorkspace { get; }
 
         public WorkspaceHomeViewModel()
         {
             _workspaceService = new WorkspaceService();
-            DefaultWorkspaceNames = new ObservableCollection<string>();
+            DefaultWorkspace = new ObservableCollection<Shortcut>();
         }
 
         private void AddShortcut()
         {
             _workspaceService.AddShortcut("Hello", "world");
-            var shortcutName = Workspace.Default.Shortcuts.Last().Name;
-            DefaultWorkspaceNames.Add(shortcutName);
+            var shortcut = Workspace.Default.Shortcuts.Last();
+            DefaultWorkspace.Add(shortcut);
         }
 
     }
