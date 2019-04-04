@@ -17,7 +17,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="20"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="120"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="20"></RowDefinition>
         </Grid.RowDefinitions>
@@ -26,7 +26,9 @@
                    Grid.Column="1"
                    Grid.Row="1" />
         <ListView Grid.Column="1"
-                  Grid.Row="2" ItemsSource="{Binding Path=DefaultWorkspaceNames}" />
+                  Grid.Row="2"
+                  ItemsSource="{Binding Path=DefaultWorkspaceNames}"
+                  Height="300"/>
         <StackPanel Orientation="Vertical"
                     Grid.Column="3"
                     Grid.Row="2">
