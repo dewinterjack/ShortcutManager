@@ -39,9 +39,9 @@
                     Grid.Column="3"
                     Grid.Row="2">
             <TextBlock Text="Title" Width="100"/>
-            <TextBox Name="ShortcutTitle"  Width="100" Margin="10"></TextBox>
+            <TextBox Name="ShortcutTitle"  Width="100" Margin="10" Text="{Binding Path=NewShortcutName, Mode=TwoWay}"/>
             <TextBlock Text="Link/URL" Width="100"/>
-            <TextBox ToolTip="Link/Path" Width="100" Margin="10"></TextBox>
+            <TextBox ToolTip="Link/Path" Width="100" Margin="10" Text="{Binding Path=NewShortcutLink, Mode=TwoWay}" />
             <Button Content="Add Shortcut"
                     Width="100"
                     Height="30"
