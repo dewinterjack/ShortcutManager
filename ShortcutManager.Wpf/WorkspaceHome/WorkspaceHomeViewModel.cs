@@ -1,4 +1,4 @@
-﻿using System.Collections.ObjectModel;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -35,7 +35,7 @@ namespace ShortcutManager.Wpf.WorkspaceHome
         }
 
         public ICommand CreateShortcut =>
-            new RelayCommand( _ => AddShortcut(), _ => true);
+            new RelayCommand( _ => AddShortcut());
 
         public ObservableCollection<Shortcut> DefaultWorkspace { get; }
 
