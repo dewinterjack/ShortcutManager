@@ -38,7 +38,7 @@ namespace ShortcutManager.Wpf.WorkspaceHome
         public ICommand CreateShortcut =>
             new RelayCommand( _ => AddShortcut());
 
-        public ICommand LaunchShortcut => new RelayCommand(selectedShortcut => ExecuteLink((Shortcut)selectedShortcut));
+        public ICommand LaunchShortcut => new RelayCommand(selectedShortcut => ExecuteLink((Shortcut) selectedShortcut));
 
         private void ExecuteLink(Shortcut selectedShortcut)
         {
