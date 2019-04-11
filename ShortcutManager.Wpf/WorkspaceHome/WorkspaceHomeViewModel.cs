@@ -38,11 +38,11 @@ namespace ShortcutManager.Wpf.WorkspaceHome
         public ICommand CreateShortcut =>
             new RelayCommand( _ => AddShortcut());
 
-        public ICommand LaunchShortcut => new RelayCommand(selectedShortcut => ExecuteLink((Shortcut) selectedShortcut));
+        public ICommand LaunchShortcut => new RelayCommand(ExecuteLink);
 
-        private void ExecuteLink(Shortcut selectedShortcut)
+        private void ExecuteLink(object selectedShortcut)
         {
-            Process.Start(selectedShortcut.Link);
+            if (selectedShortcut is string shortcutLink) Process.Start(shortcutLink);
         }
 
         public ObservableCollection<Shortcut> DefaultWorkspace { get; }

@@ -35,7 +35,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Button Content="{Binding Name}"
-                            Command="{Binding LaunchShortcut, RelativeSource={RelativeSource AncestorType={x:Type workspaceHome:WorkspaceHomeViewModel}}}"
+                            Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListView}}, Path=DataContext.LaunchShortcut}"
                             CommandParameter="{Binding Link}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
