@@ -4,12 +4,14 @@ namespace ShortcutManager
 {
     public class Workspace
     {
-        public static Workspace Default = new Workspace();
+        public string Name { get; }
+        public static Workspace Default = new Workspace("Default");
 
         public List<Shortcut> Shortcuts { get; }
 
-        public Workspace()
+        public Workspace(string name)
         {
+            Name = name;
             Shortcuts = new List<Shortcut>();
         }
     }
