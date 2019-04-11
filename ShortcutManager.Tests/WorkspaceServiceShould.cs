@@ -4,7 +4,7 @@ using Shouldly;
 
 namespace ShortcutManager.Tests
 {
-    public class ShortcutServiceShould
+    public class WorkspaceServiceShould
     {
         [Test]
         public void AddShortcutToDefaultWorkspace()
