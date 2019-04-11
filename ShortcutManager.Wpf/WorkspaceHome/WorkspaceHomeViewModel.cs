@@ -1,11 +1,14 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using ShortcutManager.Annotations;
+using ShortcutManager.WorkspaceStorage;
 using ShortcutManager.Wpf.Utils;
+using TextWriter = ShortcutManager.WorkspaceStorage.TextWriter;
 
 namespace ShortcutManager.Wpf.WorkspaceHome
 {
@@ -49,7 +52,9 @@ namespace ShortcutManager.Wpf.WorkspaceHome
 
         public WorkspaceHomeViewModel()
         {
-            _workspaceService = new WorkspaceService();
+            var textWriter = new TextWriter();
+            var workspaceStorageService = new WorkspaceStorageService(textWriter);
+            _workspaceService = new WorkspaceService(workspaceStorageService);
             DefaultWorkspace = new ObservableCollection<Shortcut>();
         }
 

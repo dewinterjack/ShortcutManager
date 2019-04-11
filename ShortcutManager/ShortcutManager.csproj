@@ -47,6 +47,13 @@
     <Compile Include="Shortcut.cs" />
     <Compile Include="WorkspaceService.cs" />
     <Compile Include="Workspace.cs" />
+    <Compile Include="WorkspaceStorage\ITextWriter.cs" />
+    <Compile Include="WorkspaceStorage\IWorkspaceStorageService.cs" />
+    <Compile Include="WorkspaceStorage\TextWriter.cs" />
+    <Compile Include="WorkspaceStorage\WorkspaceStorageService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DefaultWorkspace.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
