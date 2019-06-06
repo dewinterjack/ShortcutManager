@@ -18,7 +18,7 @@ namespace ShortcutManager.WorkspaceStorage
             _textWriter.WriteToStorage(formattedWorkspace);
         }
 
-        private List<string> FormatWorkspace(Workspace workspace)
+        private static IEnumerable<string> FormatWorkspace(Workspace workspace)
         {
             var workspaceContents = new List<string> {workspace.Name};
             var workspaceShortcuts = workspace.Shortcuts.Select(shortcut => $"Name: {shortcut.Name} | Link: {shortcut.Link}");
