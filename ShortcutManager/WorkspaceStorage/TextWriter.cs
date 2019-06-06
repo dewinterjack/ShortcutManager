@@ -9,10 +9,10 @@ namespace ShortcutManager.WorkspaceStorage
 {
     public class TextWriter : ITextWriter
     {
-        public void WriteToStorage(IEnumerable<string> lines)
+        public void WriteToStorage(string text)
         {
-            var storageFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DefaultWorkspace.txt");
-            File.WriteAllLines(storageFilePath, lines);
+            var storageFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DefaultWorkspace.json");
+            File.WriteAllText(storageFilePath, text);
         }
     }
 }

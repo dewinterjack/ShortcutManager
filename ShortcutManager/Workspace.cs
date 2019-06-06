@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ShortcutManager
 {
+    [Serializable]
     public class Workspace
     {
         public string Name { get; }
