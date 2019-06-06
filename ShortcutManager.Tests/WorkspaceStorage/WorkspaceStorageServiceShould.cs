@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using NSubstitute;
 using NUnit.Framework;
 using ShortcutManager.WorkspaceStorage;
@@ -18,9 +20,11 @@ namespace ShortcutManager.Tests.WorkspaceStorage
             var workspaceStorageService = new WorkspaceStorageService(textFileWriter);
 
             workspaceStorageService.Save(workspace);
-            textFileWriter.Received().WriteToStorage(Arg.Is<List<string>>(x =>
-                x.Contains("MyWorkspace") && x.Contains("Name: SomeShortcut | Link: SomeLink") &&
-                x.Contains("Name: AnotherShortcut | Link: AnotherLink")));
+            textFileWriter.Received().WriteToStorage(Arg.Is<IEnumerable<string>>(x =>
+                x.SequenceEqual(new[]
+                {
+                    "MyWorkspace", "Name: SomeShortcut | Link: SomeLink", "Name: AnotherShortcut | Link: AnotherLink"
+                })));
         }
     }
 }
