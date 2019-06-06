@@ -1,7 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
@@ -41,6 +40,9 @@ namespace ShortcutManager.Wpf.WorkspaceHome
         public ICommand CreateShortcut =>
             new RelayCommand( _ => AddShortcut());
 
+        public ICommand Save =>
+            new RelayCommand(_ => SaveAll());
+
         public ICommand LaunchShortcut => new RelayCommand(ExecuteLink);
 
         private void ExecuteLink(object selectedShortcut)
@@ -65,6 +67,11 @@ namespace ShortcutManager.Wpf.WorkspaceHome
             DefaultWorkspace.Add(shortcut);
             NewShortcutName = "";
             NewShortcutLink = "";
+        }
+
+        private void SaveAll()
+        {
+            _workspaceService.SaveWorkspace();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
