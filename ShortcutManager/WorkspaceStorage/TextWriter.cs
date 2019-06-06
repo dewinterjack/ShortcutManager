@@ -9,7 +9,7 @@ namespace ShortcutManager.WorkspaceStorage
 {
     public class TextWriter : ITextWriter
     {
-        public void WriteToStorage(List<string> lines)
+        public void WriteToStorage(IEnumerable<string> lines)
         {
             var storageFilePath = Path.Combine(Environment.CurrentDirectory, "DefaultWorkspace.txt");
             System.IO.File.WriteAllLines(storageFilePath, lines);

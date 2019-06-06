@@ -4,6 +4,6 @@ namespace ShortcutManager.WorkspaceStorage
 {
     public interface ITextWriter
     {
-        void WriteToStorage(List<string> lines);
+        void WriteToStorage(IEnumerable<string> lines);
     }
 }
