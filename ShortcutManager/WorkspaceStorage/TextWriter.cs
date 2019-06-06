@@ -11,8 +11,8 @@ namespace ShortcutManager.WorkspaceStorage
     {
         public void WriteToStorage(IEnumerable<string> lines)
         {
-            var storageFilePath = Path.Combine(Environment.CurrentDirectory, "DefaultWorkspace.txt");
-            System.IO.File.WriteAllLines(storageFilePath, lines);
+            var storageFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DefaultWorkspace.txt");
+            File.WriteAllLines(storageFilePath, lines);
         }
     }
 }
