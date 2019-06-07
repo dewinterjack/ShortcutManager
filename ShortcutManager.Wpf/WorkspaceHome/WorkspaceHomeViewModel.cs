@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
@@ -7,7 +8,6 @@ using System.Windows.Input;
 using ShortcutManager.Annotations;
 using ShortcutManager.WorkspaceStorage;
 using ShortcutManager.Wpf.Utils;
-using TextWriter = ShortcutManager.WorkspaceStorage.TextWriter;
 
 namespace ShortcutManager.Wpf.WorkspaceHome
 {
@@ -54,10 +54,16 @@ namespace ShortcutManager.Wpf.WorkspaceHome
 
         public WorkspaceHomeViewModel()
         {
-            var textWriter = new TextWriter();
-            var workspaceStorageService = new WorkspaceStorageService(textWriter);
+            var textWriter = new JsonWriter();
+            var textReader = new JsonReader();
+            var workspaceStorageService = new WorkspaceStorageService(textWriter, textReader);
             _workspaceService = new WorkspaceService(workspaceStorageService);
-            DefaultWorkspace = new ObservableCollection<Shortcut>();
+            DefaultWorkspace = new ObservableCollection<Shortcut>(LoadDefaultWorkspace());
+        }
+
+        private List<Shortcut> LoadDefaultWorkspace()
+        {
+            return _workspaceService.LoadWorkspace().Shortcuts;
         }
 
         private void AddShortcut()

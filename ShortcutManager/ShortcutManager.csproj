@@ -44,15 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bindings\WorkspaceJsonBinding.cs" />
     <Compile Include="IWorkspaceService.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shortcut.cs" />
     <Compile Include="WorkspaceService.cs" />
     <Compile Include="Workspace.cs" />
-    <Compile Include="WorkspaceStorage\ITextWriter.cs" />
+    <Compile Include="WorkspaceStorage\IJsonReader.cs" />
+    <Compile Include="WorkspaceStorage\IJsonWriter.cs" />
     <Compile Include="WorkspaceStorage\IWorkspaceStorageService.cs" />
-    <Compile Include="WorkspaceStorage\TextWriter.cs" />
+    <Compile Include="WorkspaceStorage\JsonReader.cs" />
+    <Compile Include="WorkspaceStorage\JsonWriter.cs" />
     <Compile Include="WorkspaceStorage\WorkspaceStorageService.cs" />
   </ItemGroup>
   <ItemGroup>

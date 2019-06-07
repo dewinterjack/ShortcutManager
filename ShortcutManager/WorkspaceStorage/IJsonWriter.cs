@@ -2,8 +2,8 @@
 
 namespace ShortcutManager.WorkspaceStorage
 {
-    public interface ITextWriter
+    public interface IJsonWriter
     {
-        void WriteToStorage(string text);
+        void WriteToStorage(string text, string path);
     }
 }

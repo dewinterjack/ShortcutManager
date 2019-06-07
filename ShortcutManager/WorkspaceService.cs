@@ -21,5 +21,10 @@ namespace ShortcutManager
         {
             _workspaceStorageService.Save(Workspace.Default);
         }
+
+        public Workspace LoadWorkspace()
+        {
+            return _workspaceStorageService.Load();
+        }
     }
 }

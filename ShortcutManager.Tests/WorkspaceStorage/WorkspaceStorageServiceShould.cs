@@ -12,7 +12,7 @@ namespace ShortcutManager.Tests.WorkspaceStorage
         [Test]
         public void SaveWorkspaceWithFormatting()
         {
-            var textFileWriter = Substitute.For<ITextWriter>();
+            var textFileWriter = Substitute.For<IJsonWriter>();
             var workspace = new Workspace("MyWorkspace");
             workspace.Shortcuts.Add(new Shortcut("SomeShortcut", "SomeLink"));
             workspace.Shortcuts.Add(new Shortcut("AnotherShortcut", "AnotherLink"));
@@ -24,7 +24,7 @@ namespace ShortcutManager.Tests.WorkspaceStorage
                 x.SequenceEqual(new[]
                 {
                     "MyWorkspace", "Name: SomeShortcut | Link: SomeLink", "Name: AnotherShortcut | Link: AnotherLink"
-                })));
+                })), Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));
         }
     }
 }

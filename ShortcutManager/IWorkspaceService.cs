@@ -5,5 +5,6 @@
         void AddShortcut(string name, string link);
 
         void SaveWorkspace();
+        Workspace LoadWorkspace();
     }
 }
