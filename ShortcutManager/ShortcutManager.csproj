@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Bindings\WorkspaceJsonBinding.cs" />
     <Compile Include="IWorkspaceService.cs" />
+    <Compile Include="ObservableCollectionExtensions.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shortcut.cs" />

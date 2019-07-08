@@ -58,7 +58,8 @@ namespace ShortcutManager.Wpf.WorkspaceHome
             var textReader = new JsonReader();
             var workspaceStorageService = new WorkspaceStorageService(textWriter, textReader);
             _workspaceService = new WorkspaceService(workspaceStorageService);
-            DefaultWorkspace = new ObservableCollection<Shortcut>(LoadDefaultWorkspace());
+            DefaultWorkspace = new ObservableCollection<Shortcut>();
+            DefaultWorkspace.AddRange(LoadDefaultWorkspace());
         }
 
         private List<Shortcut> LoadDefaultWorkspace()

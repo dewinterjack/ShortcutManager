@@ -14,6 +14,12 @@ namespace ShortcutManager.WorkspaceStorage
             }
 
             var fileText = File.ReadAllText(path);
+
+            if (fileText.Length == 0)
+            {
+                return null;
+            }
+
             return JsonConvert.DeserializeObject<T>(fileText);
         }
     }
